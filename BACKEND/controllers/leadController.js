@@ -1,4 +1,4 @@
-const Lead = require("../models/Lead");
+const Lead = require("../models/lead");
 
 const createLead = async (req, res) => {
   try {
@@ -49,7 +49,7 @@ const updateLead = async (req, res) => {
     const lead = await Lead.findByIdAndUpdate(
       req.params.id,
       req.body,
-      { new: true }
+      { new: true, runValidators: true }
     );
 
     if (!lead) {

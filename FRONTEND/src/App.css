@@ -1,0 +1,355 @@
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #0e0a1a;
+  color: #e2d9f3;
+  min-height: 100vh;
+}
+
+/* ── Layout ───────────────────────────────────────────────── */
+.container {
+  width: 92%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 32px 0 60px;
+}
+
+/* ── Navbar ───────────────────────────────────────────────── */
+.navbar {
+  background: linear-gradient(135deg, #1a1028 0%, #0e0a1a 100%);
+  border-bottom: 1px solid #2e1f4a;
+  padding: 0 40px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f5f0ff;
+  letter-spacing: -0.3px;
+}
+
+.navbar-brand span {
+  color: #e0a96d;
+}
+
+.navbar-logout {
+  background: transparent;
+  border: 1px solid #3b2760;
+  color: #9b7ec8;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin: 0;
+}
+
+.navbar-logout:hover {
+  border-color: #f87171;
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.08);
+}
+
+/* ── Page Heading ─────────────────────────────────────────── */
+.page-title {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #f0eaff;
+  margin: 36px 0 28px;
+  letter-spacing: -0.5px;
+}
+
+.page-title span {
+  background: linear-gradient(90deg, #e0a96d, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card {
+  background: #160f2a;
+  border: 1px solid #2e1f4a;
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Section headings ─────────────────────────────────────── */
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #7c5cbf;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0 0 20px;
+}
+
+/* ── Lead Form ────────────────────────────────────────────── */
+.lead-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  align-items: end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #7c5cbf;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  background: #0a0614;
+  border: 1px solid #2e1f4a;
+  color: #e2d9f3;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+input::placeholder {
+  color: #4a3670;
+}
+
+input:focus {
+  border-color: #e0a96d;
+  box-shadow: 0 0 0 3px rgba(224, 169, 109, 0.15);
+}
+
+select {
+  background: #0a0614;
+  border: 1px solid #2e1f4a;
+  color: #e2d9f3;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+  width: auto;
+}
+
+select:focus {
+  border-color: #e0a96d;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 9px 18px;
+  transition: all 0.2s;
+  margin: 2px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #c97d3a, #e0a96d);
+  color: #1a0e00;
+  box-shadow: 0 2px 12px rgba(224, 169, 109, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #e0a96d, #f0c080);
+  box-shadow: 0 4px 20px rgba(224, 169, 109, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+.btn-danger:hover {
+  background: rgba(248, 113, 113, 0.2);
+  border-color: #f87171;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(167, 139, 250, 0.1);
+  color: #c4b5fd;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+}
+
+.btn-secondary:hover {
+  background: rgba(167, 139, 250, 0.2);
+  border-color: #a78bfa;
+  transform: translateY(-1px);
+}
+
+/* ── Table ────────────────────────────────────────────────── */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid #2e1f4a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #160f2a;
+  font-size: 0.9rem;
+}
+
+thead tr {
+  background: #0e0a1a;
+}
+
+th {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #7c5cbf;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  border-bottom: 1px solid #2e1f4a;
+}
+
+td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #160f2a;
+  color: #c4b0e0;
+  vertical-align: middle;
+}
+
+tbody tr {
+  background: #160f2a;
+  transition: background 0.15s;
+}
+
+tbody tr:nth-child(even) {
+  background: #120c24;
+}
+
+tbody tr:hover {
+  background: #1e1438;
+}
+
+/* ── Status Badges ────────────────────────────────────────── */
+.status-new {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(96, 165, 250, 0.12);
+  color: #93c5fd;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.status-contacted {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(224, 169, 109, 0.12);
+  color: #e0a96d;
+  border: 1px solid rgba(224, 169, 109, 0.3);
+}
+
+.status-converted {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(244, 114, 182, 0.12);
+  color: #f9a8d4;
+  border: 1px solid rgba(244, 114, 182, 0.3);
+}
+
+/* ── Notes ────────────────────────────────────────────────── */
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 220px;
+}
+
+.note-item {
+  font-size: 0.8rem;
+  color: #9b7ec8;
+  background: #0a0614;
+  border-radius: 6px;
+  padding: 4px 8px;
+  border-left: 2px solid #3b2760;
+}
+
+/* ── Login Page ───────────────────────────────────────────── */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 35%, #2a1045 0%, #0e0a1a 70%);
+}
+
+.login-card {
+  background: #160f2a;
+  border: 1px solid #2e1f4a;
+  border-radius: 20px;
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6),
+              0 0 80px rgba(167, 100, 255, 0.08);
+}
+
+.login-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f0eaff;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: -0.3px;
+  margin-bottom: 28px;
+}
+
+.login-card .form-group {
+  margin-bottom: 16px;
+}
+
+.login-card .btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-size: 0.95rem;
+  margin-top: 8px;
+  border-radius: 10px;
+}
